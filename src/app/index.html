@@ -44,9 +44,9 @@
         }        
         .bordered {
             margin-top: 5%;
-            border: 2px solid black;
             padding: 8px;
-        }
+            background-color: white;
+        }   
         .report-table {
             width: 100%;
             border-collapse: collapse;
@@ -62,7 +62,6 @@
             padding: 4px 8px;
             font-size: 12px;
         }
-
         .report-table td {
             border: 1px solid black;
             padding: 4px 8px;
@@ -139,13 +138,13 @@
             transform: rotate(180deg);
             text-align: center;
             white-space: nowrap;
-            width: 30px; /* Tetapkan lebar yang sama untuk semua sel */
+            width: 30px;
         }
 
     </style>
 </head>
 <body>
-    <div class="bordered">
+    <div class="bordered" id="main-container">
         <div class="header">
             <div class="title">AFTERNOON REPORT</div>
             <div class="logo">
@@ -159,11 +158,11 @@
             <tr>
                 <td class="label">REPORT NO</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">9</td>
+                <td class="value txt-center" id="reportNo"></td>
 
                 <td class="label">COMPANY WELL</td>
                 <td class="colon">:</td>
-                <td class="value">TEXCAL MAHATO Ltd</td>
+                <td class="value" id="companyWell"></td>
             </tr>
             <tr>
                 <td class="label">DATE</td>
@@ -656,5 +655,22 @@
             </tr>     
         </table>
     </div>
+    <button id="generate-pdf" onclick="downloadPDF()">Generate PDF</button>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include jsPDF (latest version) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Include html2canvas (latest version) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+
+
+    <!-- Your custom script -->
+    <script src="scripts/index.js"></script>
+
 </body>
 </html>
