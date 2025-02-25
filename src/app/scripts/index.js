@@ -11,46 +11,33 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('coMan').textContent = reportData.coMan;
         document.getElementById('engineer').textContent = reportData.engineer;
     }
-
 });
 
 function downloadPDF() {
     const { jsPDF } = window.jspdf;
-    var pdf = new jsPDF('p', 'pt', 'a4'); // Portrait, points, A4 size
     var element = document.getElementById("main-container");
 
-    $("#generate-pdf").attr("hidden", true); // Hide button during processing
+    $("#generate-pdf").attr("hidden", true); // Sembunyikan tombol saat proses
 
     html2canvas(element, {
-        scale: 1.2, // Improves resolution
+        scale: 2, // Meningkatkan resolusi gambar
         useCORS: true,
-        backgroundColor: "#ffffff" // Avoids transparent background
+        backgroundColor: "#ffffff"
     }).then(canvas => {
-        var imgData = canvas.toDataURL("image/png", 0.2);
+        var imgData = canvas.toDataURL("image/png");
+        
+        var pdfWidth = 600; // Lebar A4 dalam poin
+        var imgWidth = pdfWidth;
+        var imgHeight = (canvas.height * pdfWidth) / canvas.width; // Menyesuaikan tinggi dengan proporsi asli
 
-        var imgWidth = 595.28; // A4 width in points
-        var pageHeight = 841.89; // A4 height in points
-        var imgHeight = (canvas.height * imgWidth) / canvas.width;
-        var heightLeft = imgHeight;
-        var y = 0;
-
-        pdf.addImage(imgData, "jpeg", 0, y, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-        y = -pageHeight;
-
-        // Loop to add pages if content overflows
-        while (heightLeft > 0) {
-            pdf.addPage();
-            pdf.addImage(imgData, "PNG", 0, y, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-            y -= pageHeight;
-        }
-
+        var pdf = new jsPDF("p", "pt", [pdfWidth, imgHeight]); // Ukuran PDF sesuai konten
+        
+        pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
         pdf.save("report.pdf");
-        $("#generate-pdf").removeAttr("hidden"); // Show button again
+
+        $("#generate-pdf").removeAttr("hidden"); // Tampilkan kembali tombol setelah selesai
     }).catch(error => {
         console.error("PDF generation failed:", error);
         $("#generate-pdf").removeAttr("hidden");
     });
 }
-
