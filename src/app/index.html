@@ -45,6 +45,7 @@
         .bordered {
             margin-top: 5%;
             padding: 8px;
+            border: 1px solid black;
             background-color: white;
         }   
         .report-table {
@@ -77,6 +78,7 @@
         .label {
             font-weight: normal;
             width: 120px;
+            border-right-style: hidden !important;
         }
         .colon {
             width: 10px;
@@ -85,6 +87,7 @@
         }
         .value {
             font-weight: normal;
+            border-left-style: hidden !important;
         }
         .measurement {
             width: 80px;
@@ -130,8 +133,17 @@
         .split-cell-value div:last-child {
             border-left: 1px solid black;
         }
+        .no-border {
+            border: hidden !important;
+        }
         .txt-center {
             text-align: center;
+        }
+        .txt-end {
+            text-align: end;
+        }
+        .txt-bold {
+            font-weight: bolder;
         }
         .txt-vertical {
             writing-mode: vertical-rl;
@@ -248,43 +260,173 @@
                 <td class="colon">:</td>
                 <td class="value">PDU-02</td>
             </tr>
-        </table>    
-
-        <table class="report-table">
+            
             <tr class="section-header">
                 <td colspan="7">ACTIVITY(17:00) : DOF</td>
             </tr>
+        </table>    
+
+        <table class="report-table">
             <tr class="section-header">
                 <td colspan="4">BHA No./BIT No</td>
                 <td colspan="3">BHA # 3</td>
             </tr>
             <tr class="bit-data">
-                <td rowspan="8" class="txt-vertical txt-center">BIT DATA</td>
+                <td rowspan="15" class="txt-vertical txt-center">BIT DATA</td>
                 <td class="label">BHA No./BIT No</td>
                 <td class="colon">:</td>
-                <td>3/2</td>
-                <td>8-1/2" TC Bit(ADC M123)</td>
+                <td class="value txt-center">3/2</td>
+
+                <td class="label">8-1/2" TC Bit(ADC M123)</td>
                 <td class="colon">:</td>
-                <td>0.83 ft</td>
+                <td class="value txt-end">0.83 ft</td>
             </tr>
             <tr class="bit-data">
                 <td class="label">JET SIZE / TFA</td>
                 <td class="colon">:</td>
-                <td class="value split-cell">
+                <td class="value split-cell-value">
                     <div>5x15</div>
                     <div>0.860</div>
                 </td>
-                <td>6-3/4" Motor w/8-3/8" Sleeve Stab</td>
+
+                <td class="label">6-3/4" Motor w/8-3/8" Sleeve Stab</td>
                 <td class="colon">:</td>
-                <td>26.37 ft</td>
+                <td class="value txt-end">26.37 ft</td>
             </tr>
             <tr class="bit-data">
                 <td class="label">TYPE</td>
                 <td class="colon">:</td>
-                <td>S519VPX</td>
-                <td>6-3/4" Float Sub</td>
+                <td class="value txt-center">S519VPX</td>
+
+                <td class="label">6-3/4" Float Sub</td>
                 <td class="colon">:</td>
-                <td>0.83 ft</td>
+                <td class="value txt-end">0.83 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">S/N</td>
+                <td class="colon">:</td>
+                <td class="value txt-center">MS0017</td>
+
+                <td class="label">7-7/8" String Stabilizer</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">5.75 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">IADC</td>
+                <td class="colon">:</td>
+                <td class="value txt-center">M123</td>
+
+                <td class="label">6-3/4" NMDC</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">29.44 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">BIT 17 HRS</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value">
+                    <div>10.40</div>
+                    <div class="no-border">HRS</div>
+                </td>
+
+                <td class="label">6-3/4" NMDC</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">30.20 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">T.BIT HRS</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value">
+                    <div>32.30</div>
+                    <div class="no-border">HRS</div>
+                </td>
+
+                <td class="label">6.75" HOC</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">3.08 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">DEPTH IN</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value">
+                    <div>1240</div>
+                    <div class="no-border">FT MD</div>
+                </td>
+
+                <td class="label">X/O 4-1/2" IF Px4" IF B</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">2.25 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">DEPTH OUT</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value">
+                    <div></div>
+                    <div class="no-border">FT MD</div>
+                </td>
+
+                <td class="label">4x4-1/2" HWDP</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">122.74 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">FOOTAGE</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value">
+                    <div></div>
+                    <div class="no-border">FT</div>
+                </td>
+
+                <td class="label">X/O 4" IF Px4-1/2" IF B</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">2.25 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">BIT SIZE</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value">
+                    <div>8.5</div>
+                    <div class="no-border">INCH</div>
+                </td>
+
+                <td class="label">6-1/2" Drilling Jar</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">30.26 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label"></td>
+                <td class="colon"></td>
+                <td class="value"></td>
+
+                <td class="label">X/O 4-1/2" IF Px4" IF B</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">1.74 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label"></td>
+                <td class="colon"></td>
+                <td class="value"></td>
+
+                <td class="label">12x4-1/2" HWDP</td>
+                <td class="colon">:</td>
+                <td class="value txt-end">367.81 ft</td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label">&nbsp;</td>
+                <td class="colon"></td>
+                <td class="value"></td>
+
+                <td class="label"></td>
+                <td class="colon"></td>
+                <td class="value"></td>
+            </tr>
+            <tr class="bit-data">
+                <td class="label"></td>
+                <td class="colon"></td>
+                <td class="value"></td>
+
+                <td class="label txt-bold">TOTAL BHA</td>
+                <td class="colon txt-bold">:</td>
+                <td class="value txt-end txt-bold">623.12 m</td>
             </tr>
             <!-- Add more bit data rows -->
         </table>
@@ -295,6 +437,7 @@
                 <td class="label">ROP MAX</td>
                 <td class="colon">:</td>
                 <td>720</td>
+
                 <td>FT/HRS</td>
                 <td>SPM I</td>
                 <td class="colon">:</td>
@@ -305,6 +448,7 @@
                 <td class="colon">:</td>
                 <td>3.3</td>
                 <td>FT/HRS</td>
+
                 <td>SPM II</td>
                 <td class="colon">:</td>
                 <td>71</td>
@@ -314,6 +458,7 @@
                 <td class="colon">:</td>
                 <td>131</td>
                 <td></td>
+
                 <td>Krev OB</td>
                 <td class="colon">:</td>
                 <td>340.2</td>

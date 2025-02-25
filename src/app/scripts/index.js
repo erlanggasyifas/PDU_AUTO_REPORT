@@ -30,7 +30,7 @@ function downloadPDF() {
         var imgWidth = pdfWidth;
         var imgHeight = (canvas.height * pdfWidth) / canvas.width; // Menyesuaikan tinggi dengan proporsi asli
 
-        var pdf = new jsPDF("p", "pt", [pdfWidth, imgHeight]); // Ukuran PDF sesuai konten
+        var pdf = new jsPDF("p", "pt", [pdfWidth, imgHeight], true); // Ukuran PDF sesuai konten
         
         pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
         pdf.save("report.pdf");
