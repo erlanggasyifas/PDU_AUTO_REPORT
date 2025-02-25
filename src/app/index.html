@@ -52,7 +52,7 @@
             width: 100%;
             border-collapse: collapse;
             border: 1px solid black;
-            margin-bottom: 15px;
+            margin-bottom: 1px;
         }
         .report-table-clear {
             width: 100%;
@@ -261,14 +261,18 @@
                 <td class="value">PDU-02</td>
             </tr>
             
-            <tr class="section-header">
-                <td colspan="7">ACTIVITY(17:00) : DOF</td>
-            </tr>
         </table>    
 
         <table class="report-table">
             <tr class="section-header">
-                <td colspan="4">BHA No./BIT No</td>
+                <td colspan="7">ACTIVITY(17:00) : DOF</td>
+            </tr>
+        </table>
+
+        <!-- BIT DATA -->
+        <table class="report-table">
+            <tr class="section-header">
+                <td colspan="4"></td>
                 <td colspan="3">BHA # 3</td>
             </tr>
             <tr class="bit-data">
@@ -431,38 +435,128 @@
             <!-- Add more bit data rows -->
         </table>
 
+        <!-- PARAMETER -->
         <table class="report-table">
             <tr class="parameters">
                 <td rowspan="8" class="txt-vertical txt-center">D.PARAMETER</td>
                 <td class="label">ROP MAX</td>
                 <td class="colon">:</td>
-                <td>720</td>
+                <td class="value split-cell-value txt-center">
+                    <div>720</div>
+                    <div class="no-border">FT/HRS</div>
+                </td>
 
-                <td>FT/HRS</td>
-                <td>SPM I</td>
+                <td class="label">SPM I</td>
                 <td class="colon">:</td>
-                <td>0</td>
+                <td class="value split-cell-value txt-center">
+                    <div>0</div>
+                    <div class="no-border"></div>
+                </td>
             </tr>
             <tr class="parameters">
                 <td class="label">ROP MIN</td>
                 <td class="colon">:</td>
-                <td>3.3</td>
-                <td>FT/HRS</td>
+                <td class="value split-cell-value txt-center">
+                    <div>3.3</div>
+                    <div class="no-border">FT/HRS</div>
+                </td>
 
-                <td>SPM II</td>
+                <td class="label">SPM II</td>
                 <td class="colon">:</td>
-                <td>71</td>
+                <td class="value split-cell-value txt-center">
+                    <div>720</div>
+                    <div class="no-border"></div>
+                </td>
+            </tr>
+            <tr class="parameters">
+                <td class="label">AVG. ROP 17 HRS</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>83.65</div>
+                    <div class="no-border">FT/HRS</div>
+                </td>
+
+                <td class="label">SPM III</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>0</div>
+                    <div class="no-border"></div>
+                </td>
+            </tr>
+            <tr class="parameters">
+                <td class="label">AVG. ROP TOT</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>115.46</div>
+                    <div class="no-border">FT/HRS</div>
+                </td>
+
+                <td class="label">SPM IV</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>81</div>
+                    <div class="no-border"></div>
+                </td>
+            </tr>
+            <tr class="parameters">
+                <td class="label">WOB</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>3-10</div>
+                    <div class="no-border">Klbs</div>
+                </td>
+
+                <td class="label">T. SPM</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>147</div>
+                    <div class="no-border"></div>
+                </td>
+            </tr>
+            <tr class="parameters">
+                <td class="label">SPP</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>1200</div>
+                    <div class="no-border">PSI</div>
+                </td>
+
+                <td class="label">FLOW RATE</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>488</div>
+                    <div class="no-border">GPM</div>
+                </td>
+            </tr>
+            <tr class="parameters">
+                <td class="label">RPM</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>60</div>
+                    <div class="no-border"></div>
+                </td>
+
+                <td class="label">TORQUE</td>
+                <td class="colon">:</td>
+                <td class="value split-cell-value txt-center">
+                    <div>4-6</div>
+                    <div class="no-border">Klbft</div>
+                </td>
             </tr>
             <tr class="parameters">
                 <td class="label">RPM MOTOR</td>
                 <td class="colon">:</td>
-                <td>131</td>
-                <td></td>
+                <td class="value split-cell-value txt-center">
+                    <div>71</div>
+                    <div class="no-border"></div>
+                </td>
 
-                <td>Krev OB</td>
+                <td class="label">Krev OB</td>
                 <td class="colon">:</td>
-                <td>340.2</td>
-                <td>krev</td>
+                <td class="value split-cell-value txt-center">
+                    <div>340.2</div>
+                    <div class="no-border">krev</div>
+                </td>
             </tr>
             <!-- Add more parameter rows -->
         </table>
