@@ -17,25 +17,25 @@ function downloadPDF() {
     const { jsPDF } = window.jspdf;
     var element = document.getElementById("main-container");
 
-    $("#generate-pdf").attr("hidden", true); // Sembunyikan tombol saat proses
+    $("#generate-pdf").attr("hidden", true);
 
     html2canvas(element, {
-        scale: 2, // Meningkatkan resolusi gambar
+        scale: 2,
         useCORS: true,
         backgroundColor: "#ffffff"
     }).then(canvas => {
         var imgData = canvas.toDataURL("image/png");
-        
-        var pdfWidth = 600; // Lebar A4 dalam poin
+
+        var pdfWidth = 600; 
         var imgWidth = pdfWidth;
-        var imgHeight = (canvas.height * pdfWidth) / canvas.width; // Menyesuaikan tinggi dengan proporsi asli
+        var imgHeight = (canvas.height * pdfWidth) / canvas.width;
 
-        var pdf = new jsPDF("p", "pt", [pdfWidth, imgHeight], true); // Ukuran PDF sesuai konten
-        
+        var pdf = new jsPDF("p", "pt", [pdfWidth, imgHeight], true);
+
         pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-        pdf.save("report.pdf");
+        pdf.save("report.pdf");   
 
-        $("#generate-pdf").removeAttr("hidden"); // Tampilkan kembali tombol setelah selesai
+        $("#generate-pdf").removeAttr("hidden");
     }).catch(error => {
         console.error("PDF generation failed:", error);
         $("#generate-pdf").removeAttr("hidden");
