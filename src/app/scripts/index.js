@@ -2,14 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const reportData = JSON.parse(localStorage.getItem('reportData'));
 
     if (reportData) {
-        document.getElementById('reportNo').textContent = reportData.reportNo;
-        document.getElementById('companyWell').textContent = reportData.companyWell;
-        document.getElementById('date').textContent = reportData.date;
-        document.getElementById('wellType').textContent = reportData.wellType;
-        document.getElementById('depthMD').textContent = reportData.depthMD;
-        document.getElementById('depthTVD').textContent = reportData.depthTVD;
-        document.getElementById('coMan').textContent = reportData.coMan;
-        document.getElementById('engineer').textContent = reportData.engineer;
+        document.getElementById('bitNo').textContent = reportData.bitNo;
+        document.getElementById('bitTc').textContent = reportData.bitTc;
+        document.getElementById('sleeveStab').textContent = reportData.sleeveStab;
+        document.getElementById('typeBit').textContent = reportData.typeBit;
+        document.getElementById('floatSub').textContent = reportData.floatSub;
+        document.getElementById('snBit').textContent = reportData.snBit;
+        document.getElementById('stringStabilizer').textContent = reportData.stringStabilizer;
+        document.getElementById('iadc').textContent = reportData.iadc;
+        document.getElementById('nmdc').textContent = reportData.nmdc;
+        document.getElementById('bit17hrs').textContent = reportData.bit17hrs;
     }
 });
 

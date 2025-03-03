@@ -2,14 +2,16 @@ document.getElementById('dataInputForm').addEventListener('submit', function(eve
     event.preventDefault();
 
     const formData = {
-        reportNo: document.getElementById('reportNo').value,
-        companyWell: document.getElementById('companyWell').value,
-        // date: document.getElementById('date').value,
-        // wellType: document.getElementById('wellType').value,
-        // depthMD: document.getElementById('depthMD').value,
-        // depthTVD: document.getElementById('depthTVD').value,
-        // coMan: document.getElementById('coMan').value,
-        // engineer: document.getElementById('engineer').value
+        bitNo: document.getElementById('bitNoForm').value,
+        bitTc: document.getElementById('bitTcForm').value,
+        sleeveStab: document.getElementById('sleeveStabForm').value,
+        typeBit: document.getElementById('typeBitForm').value,
+        floatSub: document.getElementById('floatSubForm').value,
+        snBit: document.getElementById('snBitForm').value,
+        stringStabilizer: document.getElementById('stringStabilizerForm').value,
+        iadc: document.getElementById('iadcForm').value,
+        nmdc: document.getElementById('nmdcForm').value,
+        bit17hrs: document.getElementById('bit17hrsForm').value,
     };
 
     localStorage.setItem('reportData', JSON.stringify(formData));

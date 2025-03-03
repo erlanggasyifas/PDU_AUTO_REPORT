@@ -153,7 +153,6 @@
             position: relative;
             background-color: white !important;
         }
-        
         .txt-vertical span {
             display: block;
             width: 100%;
@@ -166,7 +165,9 @@
             align-items: center;
             justify-content: center;
         }        
-        
+        .vel-row{
+            border: none !important;
+        }
     </style>
 </head>
 <body>
@@ -193,29 +194,29 @@
             <tr>
                 <td class="label">DATE</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">15-Jun-22</td>
+                <td class="value txt-center" id="date">15-Jun-22</td>
 
                 <td class="label">WELL TYPE</td>
                 <td class="colon">:</td>
-                <td class="value">DEVELOPMENT WELL</td>
+                <td class="value" id="typeWell">DEVELOPMENT WELL</td>
             </tr>
             <tr>
                 <td class="label">WELL</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">PB-18</td>
+                <td class="value txt-center" id="well">PB-18</td>
 
                 <td class="label">WELL CLASS</td>
                 <td class="colon">:</td>
-                <td class="value">DIRECTIONAL WELL</td>
+                <td class="value" id="classWell">DIRECTIONAL WELL</td>
             </tr>
             <tr>
                 <td class="label">SPUD DATE</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">June 07, 2022 @ 04:00 HRS</td>
+                <td class="value txt-center" id="spudDate">June 07, 2022 @ 04:00 HRS</td>
 
                 <td class="label">RIG NAME</td>
                 <td class="colon">:</td>
-                <td class="value">BDU-88</td>
+                <td class="value" id="rigName">BDU-88</td>
             </tr>
             <tr>
                 <td class="label split-cell-label">
@@ -230,7 +231,7 @@
                 
                 <td class="label">CO.MAN</td>
                 <td class="colon">:</td>
-                <td class="value">AFIEF MA'RUF / BUDI</td>
+                <td class="value" id="coMan">AFIEF MA'RUF / BUDI</td>
             </tr>
             <tr>
                 <td class="label">PREV. DEPTH</td>
@@ -241,16 +242,16 @@
                 </td>
                 <td class="label">WSG</td>
                 <td class="colon">:</td>
-                <td class="value">AGUNG KURNIAWAN</td>
+                <td class="value" id="wsg">AGUNG KURNIAWAN</td>
             </tr>
             <tr>
                 <td class="label">PROGRESS 17 HRS</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">870.00 FT MD</td>
+                <td class="value txt-center" id="progress17">870.00 FT MD</td>
 
                 <td class="label">ENGINEER</td>
                 <td class="colon">:</td>
-                <td class="value">HERKAM NOVANTO / RONALD P.</td>
+                <td class="value" id="engineer">HERKAM NOVANTO / RONALD P.</td>
             </tr>
             <tr>
                 <td class="label">MIDNIGHT DEPTH</td>
@@ -261,7 +262,7 @@
                 </td>
                 <td class="label">LOGGER</td>
                 <td class="colon">:</td>
-                <td class="value">HAFIDH / PANI</td>
+                <td class="value" id="logger">HAFIDH / PANI</td>
             </tr>
             <tr>
                 <td class="label">CASING 9-5/8"</td>
@@ -272,7 +273,7 @@
                 </td>
                 <td class="label">UNIT NO</td>
                 <td class="colon">:</td>
-                <td class="value">PDU-02</td>
+                <td class="value" id="noUnit">PDU-02</td>
             </tr>
             
         </table>    
@@ -293,11 +294,11 @@
                 <td rowspan="15" class="txt-vertical txt-center" id="bit-data"><span>BIT DATA</span></td>
                 <td class="label">BHA No./BIT No</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">3/2</td>
+                <td class="value txt-center" id="bitNo">3/2</td>
 
                 <td class="label">8-1/2" TC Bit(ADC M123)</td>
                 <td class="colon">:</td>
-                <td class="value txt-end">0.83 ft</td>
+                <td class="value txt-end"><span id="bitTc">0.83</span> ft</td>
             </tr>
             <tr class="bit-data">
                 <td class="label">JET SIZE / TFA</td>
@@ -309,40 +310,40 @@
 
                 <td class="label">6-3/4" Motor w/8-3/8" Sleeve Stab</td>
                 <td class="colon">:</td>
-                <td class="value txt-end">26.37 ft</td>
+                <td class="value txt-end"><span id="sleeveStab">26.37</span> ft</td>
             </tr>
             <tr class="bit-data">
                 <td class="label">TYPE</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">S519VPX</td>
+                <td class="value txt-center" id="typeBit">S519VPX</td>
 
                 <td class="label">6-3/4" Float Sub</td>
                 <td class="colon">:</td>
-                <td class="value txt-end">0.83 ft</td>
+                <td class="value txt-end"><span id="floatSub">0.83</span> ft</td>
             </tr>
             <tr class="bit-data">
                 <td class="label">S/N</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">MS0017</td>
+                <td class="value txt-center" id="snBit">MS0017</td>
 
                 <td class="label">7-7/8" String Stabilizer</td>
                 <td class="colon">:</td>
-                <td class="value txt-end">5.75 ft</td>
+                <td class="value txt-end"><span id="stringStabilizer">5.75</span> ft</td>
             </tr>
             <tr class="bit-data">
                 <td class="label">IADC</td>
                 <td class="colon">:</td>
-                <td class="value txt-center">M123</td>
+                <td class="value txt-center" id="iadc">M123</td>
 
                 <td class="label">6-3/4" NMDC</td>
                 <td class="colon">:</td>
-                <td class="value txt-end">29.44 ft</td>
+                <td class="value txt-end"><span id="nmdc">29.44</span> ft</td>
             </tr>
             <tr class="bit-data">
                 <td class="label">BIT 17 HRS</td>
                 <td class="colon">:</td>
                 <td class="value split-cell-value">
-                    <div>10.40</div>
+                    <div id="bit17hrs">10.40</div>
                     <div class="no-border">HRS</div>
                 </td>
 
